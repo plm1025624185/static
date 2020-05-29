@@ -43,3 +43,8 @@ CREATE TABLE `student_classroom` (
 	`cid` int(10) NOT NULL,
 	PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
+
+alter table teacher add index ind_t_position_id(position_id); -- 创建普通索引
+alter table position add unique index uind_p_name(name); -- 创建唯一索引
+alter table teacher add index ind_sex_age(sex, age); -- 创建组合索引
+alter table teacher add fulltext  tx_name(name); --创建全文索引
